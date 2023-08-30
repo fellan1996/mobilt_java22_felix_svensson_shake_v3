@@ -20,6 +20,7 @@ public class MainActivity2 extends AppCompatActivity implements SensorEventListe
     private SensorManager senSensorManager;
     private Sensor senAccelerometer;
     private long lastUpdate = 0;
+    private long lastUpdateForValues = 0;
     private float last_x, last_y, last_z;
     private static final int SHAKE_THRESHOLD = 400;
     private FragmentManager fm;
@@ -104,10 +105,14 @@ public class MainActivity2 extends AppCompatActivity implements SensorEventListe
                 last_x = x;
                 last_y = y;
                 last_z = z;
+            }
+            if((curTime - lastUpdateForValues) > 1000) {
+                lastUpdateForValues = curTime;
                 float lessDecimalsX = Math.round(last_x * 10000);
                 float lessDecimalsY = Math.round(last_y * 10000);
                 float lessDecimalsZ = Math.round(last_z * 10000);
                 sensorDataInfo.setText(" X: " + lessDecimalsX / 10000 + "   Y: " + lessDecimalsY / 10000 + "   Z: " + lessDecimalsZ / 10000);
+
             }
         }
 
