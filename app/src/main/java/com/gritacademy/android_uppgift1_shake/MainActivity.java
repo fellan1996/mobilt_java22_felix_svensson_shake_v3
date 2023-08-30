@@ -76,11 +76,16 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                 float speed = Math.abs(x + y + z - last_x - last_y - last_z)/ diffTime * 10000;
 
                 if ( speed > SHAKE_THRESHOLD) {
-                    Toast.makeText(MainActivity.this, "Jadååå", Toast.LENGTH_LONG).show();
+                float lessDecimalsX = Math.round(x * 10000);
+                float lessDecimalsY = Math.round(y * 10000);
+                float lessDecimalsZ = Math.round(z * 10000);
+                String toastText = " X: " + lessDecimalsX / 10000 + "   Y: " + lessDecimalsY / 10000 + "   Z: " + lessDecimalsZ / 10000;
+                    Toast.makeText(MainActivity.this, toastText, Toast.LENGTH_LONG).show();
                 }
                 last_x = x;
                 last_y = y;
                 last_z = z;
+
             }
         }
 

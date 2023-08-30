@@ -105,8 +105,8 @@ public class MainActivity2 extends AppCompatActivity implements SensorEventListe
                 last_y = y;
                 last_z = z;
                 float lessDecimalsX = Math.round(last_x * 10000);
-                float lessDecimalsY = Math.round(last_x * 10000);
-                float lessDecimalsZ = Math.round(last_x * 10000);
+                float lessDecimalsY = Math.round(last_y * 10000);
+                float lessDecimalsZ = Math.round(last_z * 10000);
                 sensorDataInfo.setText(" X: " + lessDecimalsX / 10000 + "   Y: " + lessDecimalsY / 10000 + "   Z: " + lessDecimalsZ / 10000);
             }
         }

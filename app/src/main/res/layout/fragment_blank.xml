@@ -11,7 +11,7 @@
         android:id="@+id/fragmentText1"
         android:layout_width="333dp"
         android:layout_height="521dp"
-        android:text="Tjenare! det här meddelandet är i ett fragment"
+        android:text="Skaka för att se android-gubben"
         android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
     <ImageView
